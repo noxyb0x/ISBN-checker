@@ -4,43 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="check.js"></script>
     <title>validate ISBN</title>
 </head>
 <body>
     <label>Enter ISBN and hit exec:</label>
     <input type='text' id='input'>
     <button onclick=" let isbn = document.getElementById('input').value;
-                      if(validateISBN(isbn)) alert('true'); else alert('false'); ">exec</button> 
-<script>
-    function validateISBN(isbn){
-    
-    let vel = isbn.length; 
-    var brojCrtica = 0;
-
-    if(vel != 17)
-        return false;
-
-    for(i = 0;i <vel;i++)
-    {
-        if((isbn[i] >=0 && isbn[i] <=9) || isbn[i] =='-') 
-            {
-                if(isbn[i] =='-') 
-                {
-
-                    if(i != 3 && i != 7 && i != 11 && i != 15)  
-                         return false;
-
-                    brojCrtica++; 
-                }
-            }
-        else
-            return false;
-    }
-    if(brojCrtica != 4) 
-        return false;
-
-    return true; 
-}
-</script>
+                      if(validateISBN(isbn)) alert('Valid ISBN'); else alert('Invalid ISBN'); ">exec</button> 
 </body>
 </html>
